@@ -48,5 +48,5 @@ main(){
         break;
      }
 
-     printf("\n A \"\ %c\", dos dois numeros é: %d \n\n", OP, R);
+     printf("\n A \"\%c\", dos dois numeros é: %d \n\n", OP, R);
 }
