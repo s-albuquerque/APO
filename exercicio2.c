@@ -1,7 +1,7 @@
 /**
-    O algoritmo deve ler dois números e um dos símbolos das
-    operações: +, -, * e /. Imprimir o resultado da operação efetuada sobre os
-    números lidos.
+    O algoritmo deve ler dois nÃºmeros e um dos sÃ­mbolos das
+    operaÃ§Ãµes: +, -, * e /. Imprimir o resultado da operaÃ§Ã£o efetuada sobre os
+    nÃºmeros lidos.
 **/
 
 #include <stdio.h>
@@ -12,20 +12,20 @@ main(){
     char OP;
     setlocale(LC_ALL,"Portuguese");
 
-    printf("\n O algoritmo deve ler dois números e um dos símbolos das operações: \n \"+, -, * e /\". Imprimir o resultado da operação efetuada sobre os \n números lidos.\n\n");
+    printf("\n O algoritmo deve ler dois nÃºmeros e um dos sÃ­mbolos das operaÃ§Ãµes: \n \"+, -, * e /\". Imprimir o resultado da operaÃ§Ã£o efetuada sobre os \n nÃºmeros lidos.\n\n");
 
-    printf(" Digite o 1° numero: ");
+    printf(" Digite o 1Â° numero: ");
     scanf("%d", &N1);
     printf("\n");
 
-    printf(" Digite o 2° numero: ");
+    printf(" Digite o 2Â° numero: ");
     scanf("%d", &N2);
     printf("\n");
     fflush(stdin);
 
-    printf(" Opções de operação: \n");
-    printf(" \"Soma = +\" \n \"Subtração = -\" \n \"Multiplicação = *\" \n \"Divisão = /\" \n\n");
-    printf(" Digite a operação desejada: ");
+    printf(" OpÃ§Ãµes de operaÃ§Ã£o: \n");
+    printf(" \"Soma = +\" \n \"SubtraÃ§Ã£o = -\" \n \"MultiplicaÃ§Ã£o = *\" \n \"DivisÃ£o = /\" \n\n");
+    printf(" Digite a operaÃ§Ã£o desejada: ");
     scanf("%c",&OP);
 
      switch (OP){
@@ -43,10 +43,10 @@ main(){
          break;
          default:
                 system("cls");
-                printf("\n \"Opção inválida!!!\" \n\n");
+                printf("\n \"OpÃ§Ã£o invÃ¡lida!!!\" \n\n");
                 main();
         break;
      }
 
-     printf("\n A \"\%c\", dos dois numeros é: %d \n\n", OP, R);
+     printf("\n A \"\ %c\", dos dois numeros Ã©: %d \n\n", OP, R);
 }
