@@ -1,22 +1,22 @@
 /**
-    Um sal·rio tem os seguintes componentes:
+    Um sal√°rio tem os seguintes componentes:
     - valor nominal
     - adicional devido a horas extras
     - valor descontado para o INSS (10% do valor a receber, limitado a 150
     reais).
-     O valor adicional devido ‡s horas extras È calculado dividindo-se o
+     O valor adicional devido √†s horas extras √© calculado dividindo-se o
     valor nominal por 176 (22 dias de 8 horas), multiplicando-se pela
-    quantidade de horas e ainda com um acrÈscimo de 50%.
+    quantidade de horas e ainda com um acr√©scimo de 50%.
 
-    Escrever um programa que lÍ os valores necess·rios, calcula e
-    mostra na tela os componentes do sal·rio e o sal·rio lÌquido resultante
-    para o empregado. N„o È preciso prever arredondamentos, mas os
+    Escrever um programa que l√™ os valores necess√°rios, calcula e
+    mostra na tela os componentes do sal√°rio e o sal√°rio l√≠quido resultante
+    para o empregado. N√£o √© preciso prever arredondamentos, mas os
     valores devem ser mostrados na tela com duas casas decimais.
-    Exemplos: para um sal·rio de R$ 1.000,00, com 30 horas extras, teremos
+    Exemplos: para um sal√°rio de R$ 1.000,00, com 30 horas extras, teremos
     R$ 255,68 de horas extras [(1.000/176)*30*1,5], R$ 125,57 de INSS e um
-    sal·rio lÌquido de R$ 1.130,11. Para um sal·rio de R$ 2.000,00 e 20
+    sal√°rio l√≠quido de R$ 1.130,11. Para um sal√°rio de R$ 2.000,00 e 20
     horas extras, seriam R$ 340,91 de horas extras, R$ 150,00 de INSS (e
-    n„o os 10%), com um sal·rio lÌquido de R$ 2.190,91.
+    n√£o os 10%), com um sal√°rio l√≠quido de R$ 2.190,91.
 
 **/
 
@@ -24,33 +24,33 @@
 #include <locale.h>
 
 main(){
-        float VN=0, HE=0, INSS=0, ADC=0, VHE=0, SL=0;
+        float VN=0, HE=0, INSS=0, ADC=0, SL=0; ///declarando as variaveis e atribuindo o valor 0 a elas
         setlocale(LC_ALL,"Portuguese");
 
         printf("Digite o valor nominal de seu salario: ");
-        scanf("%f", &VN);
+        scanf("%f", &VN); //atribuindo o valor digitado a variavel VN
 
         printf("\n");
         printf("Digite o total de horas extras trabalhadas: ");
-        scanf("%f", &HE);
+        scanf("%f", &HE); //atribuindo o valor digitado a variavel HE
         printf("\n");
 
-        VHE = ((VN/176)*HE)* 1.5 ;
+        ADC = ((VN/176)*HE)* 1.5 ; // Atribuindo a variavel ADC o valor da soma dos 50% das horas extras, de acordo com o que foi solicitado
 
-        ADC = VN + VHE;
+        SL = VN + ADC; /// informando que a variavel SL recebera a soma do salario nominal (VN) e do adicional (ADC), e o resultado desta soma ser√° o novo salario liquido
 
-        if (ADC < 1700 || ADC == 1700){
-         INSS = (ADC/100)* 10;
-        }else if(ADC > 1700){
-         INSS = 150;
+        if (SL <= 1700){ /// condi√ß√£o para verificar qual ser√° o desconto do INSS a ser aplicado para cada salario 
+         INSS = (SL/100)* 10; // conta para tirar os 10% dos salarios menores ou iguais a 1700
+        }else if(SL > 1700){ // se n√£o, caso o salario seja maior que 1700
+         INSS = 150; /// informando o valor maximo de 150, para o desconto posteriormente 
         }
 
-        SL = ADC - INSS;
+        SL = SL - INSS; // subtra√ß√£o do desconto do INSS emcima do salario total resultante
 
-        printf("\n O seu sal·rio È: %.2f \n", VN);
-        printf("\n O seu acrÈscimo de 50%% È: %.2f \n", VHE);
-        printf("\n O valor descontado do INSS È: %.2f \n", INSS);
-        printf("\n O seu sal·rio lÌquido È: %.2f \n\n", SL);
+        printf("\n O seu sal√°rio √©: %.2f \n", VN); //imprimindo os resultados
+        printf("\n O seu acr√©scimo de 50%% √©: %.2f \n", ADC); //imprimindo os resultados
+        printf("\n O valor descontado do INSS √©: %.2f \n", INSS); //imprimindo os resultados
+        printf("\n O seu sal√°rio l√≠quido √©: %.2f \n\n", SL); //imprimindo os resultados
 
 
 }
