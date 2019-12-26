@@ -24,33 +24,32 @@
 #include <locale.h>
 
 main(){
-        float VN=0, HE=0, INSS=0, ADC=0, SL=0; ///declarando as variaveis e atribuindo o valor 0 a elas
+        f float VN=0, HE=0, INSS=0, ADC=0, SL=0; ///declarando as variaveis e atribuindo o valor 0 a elas
         setlocale(LC_ALL,"Portuguese");
 
         printf("Digite o valor nominal de seu salario: ");
-        scanf("%f", &VN); //atribuindo o valor digitado a variavel VN
+        scanf("%f", &VN); /// atribuindo o valor digitado a variavel VN
 
         printf("\n");
         printf("Digite o total de horas extras trabalhadas: ");
-        scanf("%f", &HE); //atribuindo o valor digitado a variavel HE
+        scanf("%f", &HE); /// atribuindo o valor digitado a variavel HE
         printf("\n");
 
-        ADC = ((VN/176)*HE)* 1.5 ; // Atribuindo a variavel ADC o valor da soma dos 50% das horas extras, de acordo com o que foi solicitado
+        ADC = ((VN/176)*HE)* 1.5 ; /// Atribuindo a variavel ADC o valor da soma dos 50% das horas extras, de acordo com o que foi solicitado
 
         SL = VN + ADC; /// informando que a variavel SL recebera a soma do salario nominal (VN) e do adicional (ADC), e o resultado desta soma será o novo salario liquido
 
-        if (SL <= 1700){ /// condição para verificar qual será o desconto do INSS a ser aplicado para cada salario 
-         INSS = (SL/100)* 10; // conta para tirar os 10% dos salarios menores ou iguais a 1700
-        }else if(SL > 1700){ // se não, caso o salario seja maior que 1700
-         INSS = 150; /// informando o valor maximo de 150, para o desconto posteriormente 
+        if (SL <= 1700){ /// condição para verificar qual será o desconto do INSS a ser aplicado para cada salario
+         INSS = (SL/100)* 10; /// conta para tirar os 10% dos salarios menores ou iguais a 1700
+        }else if(SL > 1700){ /// se não, caso o salario seja maior que 1700
+         INSS = 150; /// informando o valor maximo de 150, para o desconto posteriormente
         }
 
-        SL = SL - INSS; // subtração do desconto do INSS emcima do salario total resultante
+        SL = SL - INSS; /// subtração do desconto do INSS emcima do salario total resultante
 
-        printf("\n O seu salário é: %.2f \n", VN); //imprimindo os resultados
-        printf("\n O seu acréscimo de 50%% é: %.2f \n", ADC); //imprimindo os resultados
-        printf("\n O valor descontado do INSS é: %.2f \n", INSS); //imprimindo os resultados
-        printf("\n O seu salário líquido é: %.2f \n\n", SL); //imprimindo os resultados
-
+        printf("\n O seu salário é: %.2f \n", VN); /// imprimindo os resultados
+        printf("\n O seu acréscimo de 50%% é: %.2f \n", ADC); /// imprimindo os resultados
+        printf("\n O valor descontado do INSS é: %.2f \n", INSS); /// imprimindo os resultados
+        printf("\n O seu salário líquido é: %.2f \n\n", SL); /// imprimindo os resultados
 
 }
